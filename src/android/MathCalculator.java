@@ -1,4 +1,5 @@
-package cordova_plugin_mathcalculator;
+package cordova.plugin.mathcalculator;
+
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
