@@ -4,15 +4,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>MathCalculator</name>
     <js-module name="MathCalculator" src="www/MathCalculator.js">
-        <clobbers target="cordova.plugins.MathCalculator" />
+        <clobbers target="MathCalculator" />
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="MathCalculator">
-                <param name="android-package" value="cordova_plugin_mathcalculator.MathCalculator" />
+                <param name="android-package" value="cordova.plugin.mathcalculator.MathCalculator" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        <source-file src="src/android/MathCalculator.java" target-dir="src/cordova_plugin_mathcalculator/MathCalculator" />
+        <source-file src="src/android/MathCalculator.java" target-dir="src/cordova/plugin/mathcalculator/MathCalculator" />
     </platform>
 </plugin>
