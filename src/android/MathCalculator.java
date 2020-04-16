@@ -12,7 +12,8 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import com.sun.jndi.toolkit.url;
+ 
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,9 +39,8 @@ public class MathCalculator extends CordovaPlugin {
                 String p1 = args.getJSONObject(0).getString("param1");
 
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setType("*/*");
+                intent.setData(Uri.parse("mailto:"));
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Hi, this is a task sent from my to-do app: " + p1);
-
                 this.cordova.getActivity().getApplicationContext().startActivity(intent);
                 callback.success("Email sent!");
 
