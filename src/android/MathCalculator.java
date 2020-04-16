@@ -40,8 +40,9 @@ public class MathCalculator extends CordovaPlugin {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setType("*/*");
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Hi, this is a task sent from my to-do app: " + p1);
-                startActivity(intent);
-                
+                if (callback.intent.resolveActivity(getPackageManager()) != null) {
+                    callback.startActivity(intent);
+                }
 
                 callback.success("Email sent!");
 
