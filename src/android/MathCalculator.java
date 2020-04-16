@@ -1,5 +1,6 @@
 package cordova.plugin.mathcalculator;
-
+import android.content.Intent;
+import android.net.Uri;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
