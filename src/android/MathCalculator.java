@@ -27,10 +27,16 @@ public class MathCalculator extends CordovaPlugin {
         if (args != null) {
             try {
 
-                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
+                String p1 = args.getJSONObject(0).getString("param1");
 
-                callback.success("" + (p1+p2));
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Hi, this is a task sent from my to-do app: " + p1);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+
+                callback.success("Email sent!");
 
             } catch(Exception ex) {
                 callback.error("Something went wrong" + ex);
@@ -39,4 +45,6 @@ public class MathCalculator extends CordovaPlugin {
             callback.error("Please don't pass null value");
         }
     }
+
+   
 }
