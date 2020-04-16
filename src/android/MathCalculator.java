@@ -1,13 +1,20 @@
 package cordova.plugin.mathcalculator;
+
+import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 
-import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
-
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.LOG;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -46,6 +53,7 @@ public class MathCalculator extends CordovaPlugin {
             callback.error("Please don't pass null value");
         }
     }
+
 
    
 }
