@@ -12,10 +12,11 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.sun.jndi.toolkit.url;
  
 import java.util.ArrayList;
 import java.util.List;
+
+import android.net.Uri;
 
 /**
  * This class echoes a string called from JavaScript.
